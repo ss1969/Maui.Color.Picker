@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Controls"
+             x:Class="MauiColorPicker.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30,0" Spacing="25">
+            <local:MauiColorPicker x:Name="QCP"
+                                   WidthRequest="450" HeightRequest="450" BackgroundColor="#EEEEEE" BarRadius="10" BarRect="20, 380, 400, 35" BarVertical="False"
+                                   PickerRatio="1" SpectumRadius="5" SpectumRect="20,20,400,300" SpectumType="SINGLE_COLOR" />
+            <Grid ColumnDefinitions="Auto, *, Auto, *" ColumnSpacing="20" RowDefinitions="*, *, *, *, *">
+                <Label Grid.Row="0" Grid.Column="0" Text="Red" />
+                <Entry Grid.Row="0" Grid.Column="1" Text="{Binding ColorData.Red, Source={x:Reference QCP}}" />
+                <Label Grid.Row="1" Grid.Column="0" Text="Green" />
+                <Entry Grid.Row="1" Grid.Column="1" Text="{Binding ColorData.Green, Source={x:Reference QCP}}" />
+                <Label Grid.Row="2" Grid.Column="0" Text="Blue" />
+                <Entry Grid.Row="2" Grid.Column="1" Text="{Binding ColorData.Blue, Source={x:Reference QCP}}" />
+                <Label Grid.Row="0" Grid.Column="2" Text="Hue" />
+                <Entry Grid.Row="0" Grid.Column="3" Text="{Binding ColorData.Hue, Source={x:Reference QCP}}" />
+                <Label Grid.Row="1" Grid.Column="2" Text="Satuation" />
+                <Entry Grid.Row="1" Grid.Column="3" Text="{Binding ColorData.Sat, Source={x:Reference QCP}}" />
+                <Label Grid.Row="2" Grid.Column="2" Text="Value" />
+                <Entry Grid.Row="2" Grid.Column="3" Text="{Binding ColorData.Val, Source={x:Reference QCP}}" />
+                <Label Grid.Row="3" Grid.Column="2" Text="HEX RRGGBB" />
+                <Entry Grid.Row="3" Grid.Column="3" BackgroundColor="{Binding ColorData.PickedColor, Source={x:Reference QCP}}" Text="{Binding ColorData.PickedColorHEX, Source={x:Reference QCP}}" />
+                <Label Grid.Row="4" Grid.Column="0" Text="FULL COLOR SPECTUM" />
+                <Switch Grid.Row="4" Grid.Column="1" IsToggled="{Binding SpectumType, Source={x:Reference QCP}}" />
+            </Grid>
+            <local:MauiColorPicker x:Name="QCP2"
+                                   WidthRequest="520" HeightRequest="350" BackgroundColor="#EEEEEE" BarRadius="10" BarRect="450, 20, 35, 300" BarVertical="True"
+                                   PickerRatio="1" SpectumRadius="5" SpectumRect="20,20,400,300" SpectumType="FULL_COLOR" />
+            <Grid ColumnDefinitions="Auto, *, Auto, *" ColumnSpacing="20" RowDefinitions="*, *, *, *, *">
+                <Label Grid.Row="0" Grid.Column="0" Text="Red" />
+                <Entry Grid.Row="0" Grid.Column="1" Text="{Binding ColorData.Red, Source={x:Reference QCP2}}" />
+                <Label Grid.Row="1" Grid.Column="0" Text="Green" />
+                <Entry Grid.Row="1" Grid.Column="1" Text="{Binding ColorData.Green, Source={x:Reference QCP2}}" />
+                <Label Grid.Row="2" Grid.Column="0" Text="Blue" />
+                <Entry Grid.Row="2" Grid.Column="1" Text="{Binding ColorData.Blue, Source={x:Reference QCP2}}" />
+                <Label Grid.Row="0" Grid.Column="2" Text="Hue" />
+                <Entry Grid.Row="0" Grid.Column="3" Text="{Binding ColorData.Hue, Source={x:Reference QCP2}}" />
+                <Label Grid.Row="1" Grid.Column="2" Text="Satuation" />
+                <Entry Grid.Row="1" Grid.Column="3" Text="{Binding ColorData.Sat, Source={x:Reference QCP2}}" />
+                <Label Grid.Row="2" Grid.Column="2" Text="Value" />
+                <Entry Grid.Row="2" Grid.Column="3" Text="{Binding ColorData.Val, Source={x:Reference QCP2}}" />
+                <Label Grid.Row="3" Grid.Column="2" Text="HEX RRGGBB" />
+                <Entry Grid.Row="3" Grid.Column="3" BackgroundColor="{Binding ColorData.PickedColor, Source={x:Reference QCP2}}" Text="{Binding ColorData.PickedColorHEX, Source={x:Reference QCP2}}" />
+                <Label Grid.Row="4" Grid.Column="0" Text="FULL COLOR SPECTUM" />
+                <Switch Grid.Row="4" Grid.Column="1" IsToggled="{Binding SpectumType, Source={x:Reference QCP2}}" />
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
